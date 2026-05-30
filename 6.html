@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Exercise 6 - New Product Layout</title>
+    
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        /* Thanh điều hướng (Navbar) */
+        .custom-navbar {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        /* Slide ảnh lớn (Carousel Placeholder) */
+        .carousel-placeholder {
+            background-color: #cccccc;
+            color: #777777;
+            height: 530px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: bold;
+        }
+        /* Khối sản phẩm (Product Card) */
+        .product-card {
+            border: 1px solid #eaeaea;
+            padding: 10px;
+            background-color: #fff;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .product-img-placeholder {
+            background-color: #dcdcdc;
+            color: #888888;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #999999;
+            font-size: 0.9rem;
+        }
+        .new-price {
+            color: #ff9800;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        /* --- KHU VỰC ĐIỀU CHỈNH NÚT BẤM THEO YÊU CẦU MỚI --- */
+        
+        /* Khung chứa 2 nút nằm sát nhau */
+        .product-actions-group {
+            display: flex;
+            gap: 6px; /* Khoảng cách nhỏ giữa 2 nút */
+            margin-top: 15px;
+        }
+
+        /* Nút giỏ hàng đứng TRƯỚC: Nền xanh, hình (icon) trắng */
+        .cart-icon-only {
+            background-color: #2b4c7e; /* Nền xanh */
+            color: #ffffff;            /* Icon trắng */
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #2b4c7e;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .cart-icon-only:hover {
+            background-color: #1a3256; /* Đổi màu xanh đậm hơn khi hover */
+            border-color: #1a3256;
+            color: #ffffff;
+        }
+
+        /* Nút "Xem chi tiết" đứng SAU: Ngắn lại, phông trắng, chữ đen, bo viền */
+        .btn-detail {
+            background-color: #ffffff; /* Nền trắng */
+            color: #000000;            /* Chữ đen */
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #cccccc; /* Bo viền xám nhạt */
+            border-radius: 4px;
+            padding: 6px 15px;        /* Căn lề trong vừa vặn giúp nút ngắn lại */
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            transition: all 0.2s ease;
+        }
+        .btn-detail:hover {
+            background-color: #f1f1f1; /* Đổi nền xám nhẹ khi hover */
+            border-color: #999999;
+            color: #000000;
+        }
+
+        /* Nhãn giảm giá (Sale Badge) */
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff9800;
+            color: white;
+            padding: 3px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+            margin-top: 10px;
+            margin-right: -5px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar py-2">
+        <div class="container">
+            <a class="navbar-brand text-muted" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-muted" href="#">Link</a></li>
+                    <li class="nav-item"><a class="nav-link text-muted" href="#">Dropdown</a></li>
+                </ul>
+                <form class="d-flex align-items-center">
+                    <input class="form-control form-control-sm me-2" type="search" placeholder="Search" style="width: 200px;">
+                    <button class="btn btn-outline-primary btn-sm" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-placeholder">1920 x 530</div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-placeholder" style="background-color: #b5b5b5;">Slide 2</div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-placeholder" style="background-color: #a1a1a1;">Slide 3</div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <main class="container my-5">
+        <div class="mb-4">
+            <h2 class="text-uppercase fw-normal m-0" style="color:#555;">New Product</h2>
+            <p class="text-muted small m-0">List product description</p>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="product-card">
+                    <div class="product-img-placeholder">280 x 280</div>
+                    <div class="px-1">
+                        <h5 class="fs-6 m-0 text-secondary">Product</h5>
+                        <div class="d-flex justify-content-between align-items-center my-2">
+                            <span class="old-price">100.000 vnđ</span>
+                            <span class="new-price">80.000 vnđ</span>
+                        </div>
+                        <div class="product-actions-group">
+                            <a href="#" class="cart-icon-only" title="Thêm vào giỏ hàng">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                            <a href="#" class="btn-detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="product-card">
+                    <div class="product-img-placeholder">280 x 280</div>
+                    <div class="px-1">
+                        <h5 class="fs-6 m-0 text-secondary">Product</h5>
+                        <div class="d-flex justify-content-between align-items-center my-2">
+                            <span class="old-price">100.000 vnđ</span>
+                            <span class="new-price">80.000 vnđ</span>
+                        </div>
+                        <div class="product-actions-group">
+                            <a href="#" class="cart-icon-only" title="Thêm vào giỏ hàng">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                            <a href="#" class="btn-detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="product-card">
+                    <div class="product-img-placeholder">280 x 280</div>
+                    <div class="px-1">
+                        <h5 class="fs-6 m-0 text-secondary">Product</h5>
+                        <div class="d-flex justify-content-between align-items-center my-2">
+                            <span class="old-price">100.000 vnđ</span>
+                            <span class="new-price">80.000 vnđ</span>
+                        </div>
+                        <div class="product-actions-group">
+                            <a href="#" class="cart-icon-only" title="Thêm vào giỏ hàng">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                            <a href="#" class="btn-detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="product-card">
+                    <div class="sale-badge">Sale</div>
+                    <div class="product-img-placeholder">280 x 280</div>
+                    <div class="px-1">
+                        <h5 class="fs-6 m-0 text-secondary">Product</h5>
+                        <div class="d-flex justify-content-between align-items-center my-2">
+                            <span class="old-price">100.000 vnđ</span>
+                            <span class="new-price">80.000 vnđ</span>
+                        </div>
+                        <div class="product-actions-group">
+                            <a href="#" class="cart-icon-only" title="Thêm vào giỏ hàng">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                            <a href="#" class="btn-detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

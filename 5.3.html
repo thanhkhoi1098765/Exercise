@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Let's test the grid with Nav!</title>
+    
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <style>
+        /* Tùy chỉnh màu sắc và đường viền giống hệt như ảnh mẫu */
+        .jumbotron-custom {
+            background-color: #e9ecef;
+            padding: 4rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .grid-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .grid-row {
+            margin-bottom: -1px; /* Đè đường viền lên nhau để không bị dày */
+        }
+        .grid-col {
+            background-color: #d3d3d3;
+            border: 1px solid #999;
+            padding: 15px;
+            font-size: 1rem;
+            text-align: left;
+            min-height: 80px;
+        }
+        .footer-custom {
+            background-color: #d1c4c4;
+            color: #212529;
+            padding: 15px 0;
+            font-weight: 500;
+            margin-top: 4rem;
+        }
+        /* Thêm khoảng cách cho thanh menu nav */
+        .nav-custom {
+            max-width: 1140px;
+            margin: 0 auto 2rem auto;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jumbotron-custom">
+        <div class="container">
+            <h1 class="display-4 fw-normal">Let's test the grid!</h1>
+        </div>
+    </div>
+
+    <div class="nav-custom">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active ps-0" aria-current="page" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="grid-container">
+        
+        <div class="row grid-row">
+            <div class="col-6 grid-col">First col</div>
+            <div class="col-6 grid-col">Second col</div>
+        </div>
+
+        <div class="row grid-row">
+            <div class="col-4 grid-col">col</div>
+            <div class="col-4 grid-col">col</div>
+            <div class="col-4 grid-col">col</div>
+        </div>
+
+        <div class="row grid-row">
+            <div class="col-3 grid-col">col</div>
+            <div class="col-3 grid-col">col</div>
+            <div class="col-3 grid-col">col</div>
+            <div class="col-3 grid-col">col</div>
+        </div>
+        
+    </div>
+
+    <footer class="footer-custom text-center">
+        <div class="container">
+            <h2 class="m-0 fw-normal display-6">Created by ABC!</h2>
+        </div>
+    </footer>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+</body>
+</html>
