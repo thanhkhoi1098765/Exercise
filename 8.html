@@ -23,7 +23,6 @@
         const e = React.createElement;
 
         function BookingForm() {
-            // Khởi tạo State quản lý dữ liệu Form
             const [formData, setFormData] = React.useState({
                 fullName: '',
                 address: '',
@@ -51,19 +50,18 @@
                 alert('Đặt vé thành công! Hãy bấm F12 xem tab Console.');
             };
 
-            // Tạo giao diện bằng React.createElement (Thay thế cho JSX)
             return e('div', { className: 'container mt-5', style: { maxWidth: '550px' } },
                 e('div', { className: 'card p-4 shadow-sm bg-white' },
-                    // Alert thông báo
+                 
                     e('div', { className: 'alert alert-warning py-2 d-flex justify-content-between align-items-center' },
                         e('span', null, 'Thông báo: Vui lòng kiểm tra lại thông tin trước khi đặt.'),
                         e('button', { type: 'button', className: 'btn-close', 'data-bs-dismiss': 'alert' })
                     ),
-                    // Tiêu đề
+                    
                     e('h1', { className: 'mb-4 fw-normal text-dark', style: { fontSize: '2.5rem' } }, 'Form đặt vé máy bay'),
-                    // Form
+                    
                     e('form', { onSubmit: handleSubmit },
-                        // Nhóm Họ tên
+                        
                         e('div', { className: 'mb-3' },
                             e('label', { className: 'form-label text-secondary mb-1' }, 'Họ tên'),
                             e('div', { className: 'input-group' },
@@ -73,13 +71,13 @@
                             ),
                             e('div', { className: 'form-text text-muted fs-7 mt-1' }, 'Phải nhập 5 ký tự, in hoa....')
                         ),
-                        // Nhóm Địa chỉ
+                        
                         e('div', { className: 'mb-3' },
                             e('label', { className: 'form-label text-secondary mb-1' }, 'Địa chỉ'),
                             e('input', { type: 'text', name: 'address', className: 'form-control', value: formData.address, onChange: handleChange }),
                             e('div', { className: 'form-text text-muted fs-7 mt-1' }, 'Phải nhập 5 ký tự, in hoa....')
                         ),
-                        // Nhóm Đi từ / Đến
+                       
                         e('div', { className: 'row mb-3' },
                             e('div', { className: 'col-6' },
                                 e('label', { className: 'form-label text-secondary mb-1' }, 'Đi từ'),
@@ -98,7 +96,7 @@
                                 )
                             )
                         ),
-                        // Khứ hồi
+
                         e('div', { className: 'mb-4' },
                             e('label', { className: 'form-label text-secondary mb-1 d-block' }, 'Chọn chiều đi (Khứ hồi)'),
                             e('div', { className: 'form-check mb-1' },
@@ -110,14 +108,13 @@
                                 e('label', { className: 'form-check-label text-muted', htmlFor: 'chkVề' }, 'Về')
                             )
                         ),
-                        // Nút Đặt Vé
+                     
                         e('button', { type: 'submit', className: 'btn btn-primary w-100 py-2 fw-medium' }, 'Đặt vé')
                     )
                 )
             );
         }
 
-        // Render ứng dụng vào thẻ div#root
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(e(BookingForm));
     </script>

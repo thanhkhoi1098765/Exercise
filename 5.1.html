@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Let's test the grid!</title>
+    
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <style>
+        .jumbotron-custom {
+            background-color: #e9ecef;
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+        }
+        .grid-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .grid-row {
+            margin-bottom: -1px;
+        }
+        .grid-col {
+            background-color: #d3d3d3;
+            border: 1px solid #999;
+            padding: 15px;
+            font-size: 1rem;
+            text-align: left;
+            min-height: 80px;
+        }
+        .footer-custom {
+            background-color: #d1c4c4;
+            color: #212529;
+            padding: 15px 0;
+            font-weight: 500;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jumbotron-custom">
+        <div class="container">
+            <h1 class="display-4 fw-normal">Let's test the grid!</h1>
+        </div>
+    </div>
+
+    <div class="grid-container my-5">
+        
+        <div class="row grid-row">
+            <div class="col-6 grid-col">First col</div>
+            <div class="col-6 grid-col">Second col</div>
+        </div>
+
+        <div class="row grid-row">
+            <div class="col-4 grid-col">col</div>
+            <div class="col-4 grid-col">col</div>
+            <div class="col-4 grid-col">col</div>
+        </div>
+
+        <div class="row grid-row">
+            <div class="col-3 grid-col">col</div>
+            <div class="col-3 grid-col">col</div>
+            <div class="col-3 grid-col">col</div>
+            <div class="col-3 grid-col">col</div>
+        </div>
+        
+    </div>
+
+    <footer class="footer-custom text-center">
+        <div class="container">
+            <h2 class="m-0 fw-normal display-6">Created by ABC!</h2>
+        </div>
+    </footer>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+</body>
+</html>
